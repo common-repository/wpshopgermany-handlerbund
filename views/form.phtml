@@ -1,0 +1,272 @@
+<div class="wphb_mod_haendlerbund_settings">
+
+	<?php echo wphb_drawForm_Input('wphb_accessToken', __('Access Token', 'wphb'), $this->get_option('wphb_accessToken')); ?>
+	
+	<div class="wphb_clear"></div>
+	<br />
+
+	<table class="wphb_table">
+		<tbody>
+			
+			<tr class="tr_group0">
+				<td class="col0">
+					<label for=""><?php echo __('Versandkosten', 'wphb'); ?>:</label>
+				</td>
+				<td class="col1">
+					<select class="select" name="wpsg_page_versand">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_versand'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			<tr>
+
+			<tr>
+				<td class="col2"></td>
+				<td class="col3">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_vk" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col4"></td>
+				<td class="col5">
+					<?php if ($this->view['vk'] === false || !wphb_isSizedInt($this->view['vk'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['vk']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+
+			<tr class="tr_group1">
+				<td class="col6">
+					<label for=""><?php echo __('AGB', 'wphb'); ?>:</label>			
+				</td>
+				<td class="col7">
+					<select class="select" name="wpsg_page_agb">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_agb'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			</tr
+				
+			<tr>
+				<td class="col8"></td>
+				<td class="col9">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_agb" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col10"></td>
+				<td class="col11">
+					<?php if ($this->view['agb'] === false || !wphb_isSizedInt($this->view['agb'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['agb']); ?></span>
+					<?php } ?>	
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+
+			<tr class="tr_group2">
+				<td class="col12">
+					<label for=""><?php echo __('Widerrufsbelehrung', 'wphb'); ?>:</label>
+				</td>
+				<td class="col13">
+					<select class="select" name="wpsg_page_widerrufsbelehrung">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_widerrufsbelehrung'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col14"></td>
+				<td class="col15">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_widerruf" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col16"></td>
+				<td class="col17">
+					<?php if ($this->view['widerruf'] === false || !wphb_isSizedInt($this->view['widerruf'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['widerruf']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+	
+			<tr class="tr_group3">
+				<td class="col18">
+					<label for=""><?php echo __('Datenschutzerklärung', 'wphb'); ?>:</label>
+				</td>
+				<td class="col19">
+					<select class="select" name="wpsg_page_datenschutz">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_datenschutz'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			</tr>
+				
+			<tr>
+				<td class="col20"></td>
+				<td class="col21">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_ds" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col22"></td>
+				<td class="col23">
+					<?php if ($this->view['ds'] === false || !wphb_isSizedInt($this->view['ds'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['ds']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+	
+			<tr class="tr_group4">
+				<td class="col24">
+					<label for=""><?php echo __('Impressum', 'wphb'); ?>:</label>
+				</td>
+				<td class="col25">
+					<select class="select" name="wpsg_page_impressum">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_impressum'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col26"></td>
+				<td class="col27">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_imp" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col28"></td>
+				<td class="col29">
+					<?php if ($this->view['imp'] === false || !wphb_isSizedInt($this->view['imp'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['imp']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+
+			<tr class="tr_group5">
+				<td class="col30">
+					<label for=""><?php echo __('Batteriehinweise', 'wphb'); ?>:</label>
+				</td>
+				<td class="col31">
+					<select class="select" name="wpsg_page_battery">
+						<?php foreach ($this->view['arPages'] as $page_id => $page) { ?>
+						<option value="<?php echo $page_id; ?>" <?php echo (($page_id == $this->get_option('wpsg_page_battery'))?'selected="selected"':''); ?>><?php echo $page; ?></option>
+						<?php } ?>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col32"></td>
+				<td class="col33">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_battery" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col34"></td>
+				<td class="col35">
+					<?php if ($this->view['battery'] === false || !wphb_isSizedInt($this->view['battery'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['battery']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+
+			<tr class="tr_group6">
+				<td class="col36">
+					<label for=""><?php echo __('Rückgabebelehrung', 'wphb'); ?>:</label>
+				</td>
+				<td class="col37">
+					<label>
+						<input class="checkbox" type="checkbox" value="1" name="wphb_rueck" />
+						&nbsp;<?php echo __('Abgleichen', 'wphb'); ?>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col38"></td>
+				<td class="col39">
+					<small><?php echo __('Wird in die Seite für die Widerrufsbelehrung geschrieben.', 'wphb'); ?></small>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="col40"></td>
+				<td class="col41">
+					<?php if ($this->view['rueck'] === false || !wphb_isSizedInt($this->view['rueck'])) { ?>
+						<span style="color:red;"><?php echo __('Noch nicht abgeglichen', 'wphb'); ?></span>
+					<?php } else { ?>
+						<?php echo __('Letzter Abgleich', 'wpsgitrecht'); ?>: <span style="color:green;"><?php echo wphb_formatTimestamp($this->view['rueck']); ?></span>
+					<?php } ?>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</div>
